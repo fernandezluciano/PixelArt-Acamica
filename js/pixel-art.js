@@ -20,6 +20,34 @@ var nombreColores = ['White', 'LightYellow',
   'DimGray', 'LightSlateGray', 'DarkSlateGray', 'Black'
 ];
 
+var paleta = document.getElementById("paleta");
+
+var grillaPixeles = document.getElementById("grilla-pixeles");
+
+var crearPaletaColores = function (nombreColores) {
+  for (var i = 0; i < nombreColores.length; i++) {
+   var color = document.createElement("div");
+   color.style.backgroundColor = nombreColores[i];
+   color.className = "color-paleta";
+   paleta.appendChild(color);
+  }
+}
+crearPaletaColores(nombreColores);
+
+var crearGrilla = function () {
+  var i = 0;
+  while (i < 1750) {
+    var nuevoPixel = document.createElement("div");
+    grillaPixeles.appendChild(nuevoPixel);
+    i++
+  }
+}
+crearGrilla();
+
+
+
+
+
 // Variable para guardar el elemento 'color-personalizado'
 // Es decir, el que se elige con la rueda de color.
 var colorPersonalizado = document.getElementById('color-personalizado');
