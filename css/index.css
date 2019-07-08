@@ -38,25 +38,30 @@ button {
   transition: all 0.25s ease-in-out 0s;
   cursor: pointer;
 }
+
 button:hover{
   background: grey;
 }
+
 ul {
   list-style: none;
   padding: 0;
   margin: 20px 10px;
   text-align: left;
 }
+
 p {
   text-transform: uppercase;
   font-size: .3em;
   text-align: right;
 }
+
 h1 {
   color: white;
   margin-bottom: 15px;
   margin-top: 10px;
   font-family: 'Press Start 2P';
+  display: none;
 }
 
 h3 {
@@ -74,9 +79,11 @@ input[type="color"] {
   width: 30px;
   cursor: pointer;
 }
+
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
 }
+
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
@@ -97,6 +104,7 @@ input[type="color"]::-webkit-color-swatch {
 .cursor-personalizado {
   cursor: url(../img/cursor.png), auto;
 }
+
 .row {
   margin: 0;
   padding: 0;
@@ -106,6 +114,7 @@ main {
   width: 25%;
   padding: 0 25px;
 }
+
 #grilla-pixeles {
   background-color: white;
   width: 795px;
@@ -124,30 +133,35 @@ main {
  display: flex;
  align-items:center;
 }
+
 .imgs {
   flex-wrap: wrap;
 }
+
 .imgs li {
   width: 25%;
   margin: 0;
   align-items: flex-start;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
+
  .input-color li {
    margin: 10px 0;
    justify-content: space-between;
  }
+
 #indicador-de-color {
   height: 30px;
   width: 30px;
   border: 1px solid white;
   margin: 0;
   position: relative;
-
 }
+
 #indicador-de-color:after {
   content: "";
   position: absolute;
@@ -158,6 +172,7 @@ img {
   width: 29px;
   background: url(../img/empty.gif);
 }
+
 #indicador-de-color-mensaje {
   color: white;
 }
@@ -175,6 +190,7 @@ img {
   main {
     width: 100%;
   }
+
   #container {
     display: block;
     width: 100%;
@@ -185,38 +201,46 @@ img {
   main {
     width: 100%;
   }
+
   #container {
     display: block;
     width: 100%;
   }
 }
+
 @media only screen and (max-width: 600px) {
     #grilla-pixeles {
        width: 477px;
        height: 297px;
     }
+
     div {
       height: 9px;
       width: 9px;
     }
-      .imgs li {
+
+    .imgs li {
       width: 350px;
       margin: 0 auto
     }
 }
+
 @media only screen and (max-width: 375px) {
   #grilla-pixeles {
    width: 320px;
    height: 179px;
   }
+
   div {
     height: 6px;
     width: 6px;
     }
-    .imgs {
-      display: block;
+
+  .imgs {
+    display: block;
     }
-     .imgs li {
+
+  .imgs li {
     width: 100px;
     margin: 0 auto;
   }

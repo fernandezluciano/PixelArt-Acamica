@@ -20,6 +20,8 @@ var nombreColores = ['White', 'LightYellow',
   'DimGray', 'LightSlateGray', 'DarkSlateGray', 'Black'
 ];
 
+$("h1").fadeIn(700);
+
 var paleta = document.getElementById("paleta");
 
 var grillaPixeles = document.getElementById("grilla-pixeles");
@@ -50,12 +52,6 @@ $("div.color-paleta").click(function(e){
   $("#indicador-de-color").css({"backgroundColor": colorActual});
 });
 
-$(".pixel").click(function(){
-  var colorSeleccionado = document.getElementById("indicador-de-color");
-  var colorActual = colorSeleccionado.style.backgroundColor;
-  $(this).css({"backgroundColor": colorActual});
-});
-
 // Variable para guardar el elemento 'color-personalizado'
 // Es decir, el que se elige con la rueda de color.
 var colorPersonalizado = document.getElementById("color-personalizado");
@@ -68,14 +64,19 @@ colorPersonalizado.addEventListener("change", (function(){
   })
 );
 
-var mouseApretado = false;
+$(".pixel").click(function(){
+  var colorSeleccionado = document.getElementById("indicador-de-color");
+  var colorActual = colorSeleccionado.style.backgroundColor;
+  $(this).css({"backgroundColor": colorActual});
+});
 
 var grillaPixeles = document.getElementById("grilla-pixeles");
+
+var mouseApretado = false;
 
 $("#grilla-pixeles").mousedown(function(){
   mouseApretado = true;
 });
-
 $("#grilla-pixeles").mouseup(function(){
   mouseApretado = false;
 });
@@ -86,4 +87,33 @@ grillaPixeles.addEventListener("mouseover", function(e){
     colorActual = colorSeleccionado.style.backgroundColor;
     e.target.style.backgroundColor = colorActual;
   }
+});
+
+$("#borrar").click(function(){
+  $(".pixel").animate({"backgroundColor": "white"}, 1000);
+});
+
+$("#batman").click(function(){
+  cargarSuperheroe(batman);
+  var musicaBatman = new Audio("music/batman.mp3");
+  musicaBatman.play();
+});
+$("#wonder").click(function(){
+  cargarSuperheroe(wonder);
+  var musicaWonder = new Audio("music/wonder.mp3");
+  musicaWonder.play();
+});
+$("#flash").click(function(){
+  cargarSuperheroe(flash);
+  var musicaFlash = new Audio("music/flash.mp3");
+  musicaFlash.play();
+});
+$("#invisible").click(function(){
+  cargarSuperheroe(invisible);
+  var musicaInvisible = new Audio("music/invisible.mp3");
+  musicaInvisible.play();
+});
+
+$("#guardar").click(function(){
+  guardarPixelArt();
 });

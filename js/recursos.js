@@ -14,7 +14,7 @@ function guardarPixelArt() {
 }
 
 // Carga a un superheroe predefinido
-function cargarSuperheroe(superheroe) {
+function cargarSuperheroe(superheroe){
   var $pixeles = $("#grilla-pixeles div");
   for (var i = 0; i < superheroe.length; i++) {
     $pixeles[i].style.backgroundColor = superheroe[i];
